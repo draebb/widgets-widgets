@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Test</title>
+
+	<script>
+	addLoadEvent = function(func){if(typeof jQuery!="undefined")jQuery(document).ready(func);else if(typeof wpOnload!='function'){wpOnload=func;}else{var oldonload=wpOnload;wpOnload=function(){oldonload();func();}}};
+	var userSettings = {
+			'url': '',
+			'uid': '1',
+			'time':'1323847781'
+		},
+		ajaxurl = 'wp-admin/admin-ajax.php',
+		pagenow = 'widgets',
+		typenow = '',
+		adminpage = 'widgets-php',
+		thousandsSeparator = ',',
+		decimalPoint = '.',
+		isRtl = 0;
+
+	var WidgetsWidgets = {"data":{"opened_areas":[],"hidden_widgets":[]},"nonce":"NONCE","l10n":{"hide":"Hide","unhide":"Unhide","hideHiddenWidgets":"Hide Hidden Widgets","showHiddenWidgets":"Show Hidden Widgets"}};
+	</script>
+
+	<script src="external/wp/jquery,utils,json2.min.js"></script>
+	<script src="external/wp/admin-bar,hoverIntent,common,jquery-color,jquery-ui-core,jquery-ui-widget,jquery-ui-mouse,jquery-ui-sortable,jquery-ui-draggable,jquery-ui-droppable,admin-widgets.min.js"></script>
+
+	<link rel="stylesheet" href="external/jasmine-1.1.0/jasmine.css">
+	<script src="external/jasmine-1.1.0/jasmine.js"></script>
+	<script src="external/jasmine-1.1.0/jasmine-html.js"></script>
+	<script src="external/jasmine-jquery-1.3.1.js"></script>
+	<script src="../external/jQuery.ajaxQueue.min.js"></script>
+
+	<!-- include source files here... -->
+	<script src="../src/doorman.js"></script>
+	<script src="../src/hider.js"></script>
+
+	<!-- include spec files here... -->
+	<script src="spec/doorman.js"></script>
+	<script src="spec/hider.js"></script>
+
+	<script>
+		(function() {
+			var jasmineEnv = jasmine.getEnv();
+			jasmineEnv.updateInterval = 1000;
+
+			var trivialReporter = new jasmine.TrivialReporter();
+
+			jasmineEnv.addReporter(trivialReporter);
+
+			jasmineEnv.specFilter = function(spec) {
+				return trivialReporter.specFilter(spec);
+			};
+
+			var currentWindowOnload = window.onload;
+
+			window.onload = function() {
+				if (currentWindowOnload) {
+					currentWindowOnload();
+				}
+				execJasmine();
+			};
+
+			function execJasmine() {
+				jasmineEnv.execute();
+			}
+
+		})();
+
+		jasmine.getFixtures().fixturesPath = 'fixtures/';
+	</script>
+
+</head>
+
+<body>
+</body>
+</html>

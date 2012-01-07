@@ -1,0 +1,21 @@
+.widgets-widgets-hide,
+.widgets-widgets-unhide {
+	color: #777;
+	cursor: pointer;
+	float: right;
+	font-size: 12px;
+	font-weight: normal;
+}
+
+#widgets-right .widgets-widgets-hide,
+#widgets-right .widgets-widgets-unhide {
+	display: none;
+}
+
+.widgets-widgets-hide-hidden-widgets,
+.widgets-widgets-show-hidden-widgets {
+	cursor: pointer;
+	display: block;
+	padding-bottom: 12px;
+	text-align: center;
+}
