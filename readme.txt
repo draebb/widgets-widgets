@@ -3,6 +3,7 @@ Contributors: draebb
 Tags: admin, widgets
 Requires at least: 3.3
 Tested up to: 3.3.1
+Stable tag: 1.0
 
 Improve widget management.
 
