@@ -3,6 +3,7 @@
 Plugin Name: Widgets Widgets
 Plugin URI: https://github.com/draebb/widgets-widgets
 Description: Improve widget management.
+Version: 1.0
 License: GPLv2 or later
 */
 
